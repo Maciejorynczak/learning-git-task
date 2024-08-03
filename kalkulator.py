@@ -1,38 +1,26 @@
 import logging
-#logger
+
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-#działąnia matematyczne
-def dodawanie (a, b):
-    return a + b
+# Informacja wyświetlana na początku, dotycząca wyboru działania
+dzialanie = input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie")
 
-def odejmowanie(a,b):
-    return a - b
+# Prośba o podanie liczb
+a = float(input("Podaj składnik 1: "))
+b = float(input("Podaj składnik 2: "))
 
-def mnozenie(a,b):
-    return a * b 
-
-def dzielenie(a,b):
-    return a / b
-# Typy dzialan
-dzialanie = int(input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie: "))
-# Pobieranie dwóch liczb
-liczba1 = float(input("Podaj liczbe 1: "))
-liczba2 = float(input("Podaj liczbe 2: "))
-
-if dzialanie == 1:
-    logging.info(f"Dodaję {liczba1:.2f} i {liczba2:.2f}")
-    wynik = dodawanie(liczba1, liczba2)
-elif dzialanie == 2:
-    logging.info(f"Odejmuję {liczba2:.2f} od {liczba1:.2f}")
-    wynik = odejmowanie(liczba1, liczba2)
-elif dzialanie == 3:
-    logging.info(f"Mnożę {liczba1:.2f} przez {liczba2:.2f}")
-    wynik = mnozenie(liczba1, liczba2)
-elif dzialanie == 4:
-    logging.info(f"Dzielę {liczba1:.2f} przez {liczba2:.2f}")
-    wynik = dzielenie(liczba1, liczba2)
+#Obliczenia
+if dzialanie == "1":
+    logging.info(f"Dodaję {a} i {b}")
+    print(f"Wynik to {a + b}")
+elif dzialanie == "2":
+    logging.info(f"Odejmuję {a} od {b}")
+    print(f"Wynik to {a - b}")
+elif dzialanie == "3":
+    logging.info(f"Mnożę {a} i {b}")
+    print(f"Wynik to {a * b}")
+elif dzialanie == "4":
+        logging.info(f"Dzielę {a} przez {b}")
+        print(f"Wynik to {a // b}")
 else:
-    wynik = "Niepoprawny wybór działania!"
-
-print(f"Wynik to: {wynik:.2f}" if isinstance(wynik, float) else wynik)
+    print("Nie ma takiego działania.")
